@@ -48,10 +48,10 @@ Each item below is both a learning checkpoint and a working piece of the
 blog. We move to the next only when the current one is understood, not
 just functional.
 
-- [ ] **Foundations** — project vs app, settings.py, URLconf, request/response
+- [x] **Foundations** — project vs app, settings.py, URLconf, request/response
       cycle. Outcome: `blog` project with a `posts` app and a "Hello blog"
       view at `/`.
-- [ ] **Models & the ORM** — fields, migrations, the shell, QuerySets.
+- [x] **Models & the ORM** — fields, migrations, the shell, QuerySets.
       Outcome: a `Post` model (title, body, created_at). Create and query
       posts in `manage.py shell`. No views yet.
 - [ ] **Admin site** — ModelAdmin, list_display, search_fields, why the
