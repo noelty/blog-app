@@ -54,10 +54,10 @@ just functional.
 - [x] **Models & the ORM** — fields, migrations, the shell, QuerySets.
       Outcome: a `Post` model (title, body, created_at). Create and query
       posts in `manage.py shell`. No views yet.
-- [ ] **Admin site** — ModelAdmin, list_display, search_fields, why the
+- [x] **Admin site** — ModelAdmin, list_display, search_fields, why the
       admin exists at all. Outcome: register Post, create a superuser,
       write posts through the admin.
-- [ ] **Function-based views & templates** — template language, inheritance,
+- [x] **Function-based views & templates** — template language, inheritance,
       static files, `{% url %}`, URL namespacing. Outcome: post list at `/`
       and post detail at `/post/<slug>/`, with a shared `base.html`.
 - [ ] **Forms** — Form vs ModelForm, CSRF, GET vs POST, redirect-after-POST.
