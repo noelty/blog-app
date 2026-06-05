@@ -55,12 +55,12 @@ just functional.
       Outcome: a `Post` model (title, body, created_at). Create and query
       posts in `manage.py shell`. No views yet.
 - [x] **Admin site** — ModelAdmin, list_display, search_fields, why the
-      admin exists at all. Outcome: register Post, create a superuser,
+      admin exists at all. Outcome: register Post, create a superuser,q
       write posts through the admin.
 - [x] **Function-based views & templates** — template language, inheritance,
       static files, `{% url %}`, URL namespacing. Outcome: post list at `/`
       and post detail at `/post/<slug>/`, with a shared `base.html`.
-- [ ] **Forms** — Form vs ModelForm, CSRF, GET vs POST, redirect-after-POST.
+- [x] **Forms** — Form vs ModelForm, CSRF, GET vs POST, redirect-after-POST.
       Outcome: a `Comment` model (ForeignKey to Post) and a comment form
       on the detail page.
 - [ ] **Class-based views** — when CBVs help, ListView, DetailView,
