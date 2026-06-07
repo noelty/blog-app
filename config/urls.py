@@ -17,12 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from blog.views import PostViewSet
 
 
 router = DefaultRouter()
-router.register(r'posts', PostViewSet)
-
 urlpatterns = [
     path('', include("blog.urls", namespace="blog")),
     path('blog/', include(router.urls)),

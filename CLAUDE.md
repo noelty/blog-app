@@ -63,7 +63,7 @@ just functional.
 - [x] **Forms** — Form vs ModelForm, CSRF, GET vs POST, redirect-after-POST.
       Outcome: a `Comment` model (ForeignKey to Post) and a comment form
       on the detail page.
-- [ ] **Class-based views** — when CBVs help, ListView, DetailView,
+- [x] **Class-based views** — when CBVs help, ListView, DetailView,
       CreateView, mixins. Outcome: refactor the list and detail views into
       CBVs, then discuss what we gained and lost.
 - [ ] **Authentication** — User model, login/logout, `login_required`,
