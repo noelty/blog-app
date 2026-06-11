@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block content %}
+    <p>{{post.author}}</p>
     <h1>{{post.title}}</h1>
     <p>{{post.body}}</p>
     <p>{{post.created_at}}</p>
@@ -15,11 +13,8 @@
         <button type="submit">submit</button>
     </form>
     {% for comment in comments %}
-        <h4>{{ comment.name }}</h4>
+        <h5>{{ comment.author}}</h5>
         <p>{{ comment.text }}</p>
         <p>{{ comment.created_at }}</p>
     {% endfor %}
-        
-
-</body>
-</html>
+{% endblock %}

@@ -7,4 +7,6 @@
     {% for post in posts %}
         <a href="{% url 'blog:post-detail' id=post.id %}">{{post.title}}</a>
     {% endfor %}
+    <h2>Create your own post</h2>
+    <a href="{% url 'blog:create-post' %}">create your post</a>
 {% endblock %}

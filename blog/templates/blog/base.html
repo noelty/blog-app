@@ -6,6 +6,17 @@
     <title>{% block title %}  {% endblock %}</title>
 </head>
 <body>
+    <nav>
+        {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <p>{{ user.username }}</p>
+                <button type="submit">logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">login</a>
+        {% endif %}
+    </nav>
     <div class="content">
         {% block content %} 
 

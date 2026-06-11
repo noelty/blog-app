@@ -66,7 +66,7 @@ just functional.
 - [x] **Class-based views** — when CBVs help, ListView, DetailView,
       CreateView, mixins. Outcome: refactor the list and detail views into
       CBVs, then discuss what we gained and lost.
-- [ ] **Authentication** — User model, login/logout, `login_required`,
+- [x] **Authentication** — User model, login/logout, `login_required`,
       permissions. Outcome: only logged-in users can comment; Post.author
       is auto-set to `request.user`.
 - [ ] **Performance & polish** — pagination, slugs in URLs, `select_related`,
