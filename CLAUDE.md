@@ -69,7 +69,7 @@ just functional.
 - [x] **Authentication** — User model, login/logout, `login_required`,
       permissions. Outcome: only logged-in users can comment; Post.author
       is auto-set to `request.user`.
-- [ ] **Performance & polish** — pagination, slugs in URLs, `select_related`,
+- [x] **Performance & polish** — pagination, slugs in URLs, `select_related`,
       `prefetch_related`, the N+1 problem. Outcome: paginated post list,
       inspect SQL with django-debug-toolbar, fix any N+1 queries.
 - [ ] **Stretch (pick one)** — tags, full-text search, or an RSS feed.

@@ -1,4 +1,5 @@
 from typing import Any
+from django.db.models.query import QuerySet
 from django.urls import reverse
 from .models import Post, Comment
 from .forms import CommentForm
@@ -12,15 +13,19 @@ class PostListView(ListView):
     model = Post
     context_object_name = "posts"
     template_name = "blog/home.html"
+    paginate_by = 10
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super().get_queryset()
+        return queryset.select_related("author").prefetch_related("comment_set")
 
 class PostDetailView(FormMixin, DetailView):
     model = Post
     form_class = CommentForm
     template_name = "blog/post_detail.html"
-    pk_url_kwarg = "id"
+    slug_url_kwarg = "slug"
 
     def get_success_url(self):
-        return reverse("blog:post-detail", kwargs={"id": self.object.id})
+        return reverse("blog:post-detail", kwargs={"slug": self.object.slug})
 
     def form_valid(self, form):
         comment = form.save(commit=False)
@@ -41,8 +46,12 @@ class PostDetailView(FormMixin, DetailView):
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        context["comments"] = Comment.objects.filter(post=self.object)
+        context["comments"] = Comment.objects.filter(post=self.object).select_related("author")
         return context
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super().get_queryset()
+        return queryset.select_related("author")
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post

@@ -4,6 +4,6 @@ app_name = "blog"
 
 urlpatterns = [
     path("", PostListView.as_view(), name="home"),
-    path("post/<int:id>/", PostDetailView.as_view(), name="post-detail"),
-    path("post/new/", PostCreateView.as_view(), name="create-post")
+    path("posts/<slug:slug>/", PostDetailView.as_view(), name="post-detail"),
+    path("post/new/", PostCreateView.as_view(), name="create-post"),
 ]
