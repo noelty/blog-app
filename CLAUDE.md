@@ -72,7 +72,21 @@ just functional.
 - [x] **Performance & polish** — pagination, slugs in URLs, `select_related`,
       `prefetch_related`, the N+1 problem. Outcome: paginated post list,
       inspect SQL with django-debug-toolbar, fix any N+1 queries.
-- [ ] **Stretch (pick one)** — tags, full-text search, or an RSS feed.
+- [ ] **Deployment** — `DEBUG=False`, `ALLOWED_HOSTS`, `SECRET_KEY` via env,
+      static files in production (`collectstatic` + WhiteNoise), SQLite →
+      PostgreSQL, a WSGI server (Gunicorn), and a host (Render/Railway/Fly).
+      Outcome: the blog running live on the internet, served by Gunicorn,
+      backed by Postgres, with `DEBUG` off and secrets out of the repo.
+- [ ] **Full-text search** — Django's `django.contrib.postgres.search`
+      (`SearchVector`, `SearchQuery`, `SearchRank`); Postgres-only, so it
+      builds on Deployment. Outcome: a search box that ranks matching posts
+      by relevance across title and body.
+- [ ] **RSS feed** — Django's syndication framework
+      (`django.contrib.syndication`), a `Feed` subclass wired to a URL.
+      Outcome: a valid RSS feed of the latest posts at `/feed/`.
+
+Scaling & system design was removed from this plan — the blog is too small
+to justify it. That learning moves to a separate, larger project (see chat).
 
 ### Rules for the plan
 
